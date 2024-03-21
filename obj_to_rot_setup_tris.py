@@ -75,15 +75,19 @@ def plot_shape(tri_shape_points, tri_shape_f):
         # EXPLANATION AS TO HOW THE PLOT WORKS USING THE f VALUES IN THE OBJ
         # tri_shape_points holds the point vectors
         # tri_shape_f holds the sequence of enumerated points (in 1=1st ordinal)
-        # used to draw all edges to make a face.
-        # Since tri_shape_points is a list of point vectors, it takes two indices
-        # to access each point vectors.
+        # The sequence of point vectors in tri_shape_f is used to draw all edges
+        # to make a face.
+        # Since tri_shape_points is a list of point vectors (list of lists),
+        # it takes two indices to access each point value. The first, for the vector in
+        # order in the list, and the second for the either x, y or z values.
         # To get the correct points to draw the face, we must use tri_shape_f because
         # it has the correct order of points for each face.
         # Thus, to get the correct indices for the first point vector to plot, we use
-        # face[0], which tells us which point vector to use for plotting vertex 0 to 1
+        # face[0], which tells us which point vector to use in the order of tri_shape_f
+        # for plotting vertex 0 to 1
+        # For example, to plot vertex 0 to 1
         # face[0] has the start ordinal for vertex 0. Then the second index is the [0]
-        # is the x value (eg. [1] is the y value, [2] is the z value).
+        # to get the x value (eg. [1] is the y value, [2] is the z value).
 
         # plt.plot needs two values, one for x and one for y in this format [x,y]
         # The first point x val is:
