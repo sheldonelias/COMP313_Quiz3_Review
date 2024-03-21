@@ -78,21 +78,21 @@ def plot_shape(quad_shape_points, quad_shape_f):
         # vertex 0 to 1
         plt.plot([ quad_shape_points[  face[0] ] [0], quad_shape_points[ face[1]] [0] ],
                  [ quad_shape_points[  face[0] ] [1], quad_shape_points[ face[1]] [1] ],
-                 color='k')
+                 color='black')
         # vertex 1 to 2
         plt.plot([ quad_shape_points[  face[1] ] [0], quad_shape_points[ face[2]] [0] ],
                  [ quad_shape_points[  face[1] ] [1], quad_shape_points[ face[2]] [1] ],
-                 color='k')
+                 color='red')
 
         # vertex 2 to 3
         plt.plot([ quad_shape_points[  face[2] ] [0], quad_shape_points[ face[3]] [0] ],
                  [ quad_shape_points[  face[2] ] [1], quad_shape_points[ face[3]] [1] ],
-                 color='k')
+                 color='black')
        
         # vertex 3 to 0
         plt.plot([ quad_shape_points[  face[3] ] [0], quad_shape_points[ face[0]] [0] ],
                  [ quad_shape_points[  face[3] ] [1], quad_shape_points[ face[0]] [1] ],
-                 color='k')
+                 color='black')
 
         pass
 

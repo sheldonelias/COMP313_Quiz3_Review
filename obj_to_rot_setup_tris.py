@@ -78,7 +78,7 @@ def plot_shape(tri_shape_points, tri_shape_f):
         # vertex 1 to 2
         plt.plot([ tri_shape_points[  face[1] ] [0], tri_shape_points[ face[2]] [0] ],
                  [ tri_shape_points[  face[1] ] [1], tri_shape_points[ face[2]] [1] ],
-                 color='k')
+                 color='red')
         # vertex 2 to 0
         plt.plot([ tri_shape_points[  face[2] ] [0], tri_shape_points[ face[0]] [0] ],
                  [ tri_shape_points[  face[2] ] [1], tri_shape_points[ face[0]] [1] ],
@@ -91,7 +91,7 @@ def plot_shape(tri_shape_points, tri_shape_f):
 
 
 def main():
-    importObj('octahedron') # Choose from cube, tetrahedron, octahedron
+    importObj('tetrahedron') # Choose from cube, tetrahedron, octahedron
     plot_shape(tri_shape_points, tri_shape_f)
     pass
 

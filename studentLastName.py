@@ -132,4 +132,4 @@ pass
 
 
 # User input method call
-rotate_shape(0,0,0, 0, 'Ry', 'cube')
+rotate_shape(0,0,0, 0, 'Ry', 'tetrahedron')
