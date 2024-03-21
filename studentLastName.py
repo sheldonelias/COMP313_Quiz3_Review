@@ -141,5 +141,7 @@ def rotate_shape(xc, yc, zc, angle, R_axis, solid_name):
 pass
 
 
-# User input method call
-rotate_shape(1,1,1, 45, 'Ry', 'tetrahedron')
+# User input method call, CHANGE VALUES for all args:
+# xc, yc, zc for all RealNums [-10,10], angle for all RealNums [-259,259]
+# R_axis ['Rx','Ry','Rz'], solid_name ['cube', 'tetrahedron', 'octahedron']
+rotate_shape(0,0,0, 0, 'Ry', 'tetrahedron')
