@@ -49,6 +49,7 @@ def choose_solid_name(solid_name):
 
 #———————————————————–function definitions
 def rotx(xc, yc, zc, xp, yp, zp, Rx):
+   Rx = Rx * math.pi / 180
    a = [xp, yp, zp]
    b = [1, 0, 0] #———————————-[cx11,cx12,cx13]
    xpp=np.inner(a,b) #—–scalar product of a,b=xp*cx11+yp*cx12+ zp*cx13
@@ -72,6 +73,7 @@ def roty(xc,yc,zc,xp,yp,zp,Ry):
    return[xg,yg,zg]
 
 def rotz(xc,yc,zc,xp,yp,zp,Rz):
+   Rz = Rz * math.pi / 180
    a=[xp,yp,zp]
    b=[cos(Rz),-sin(Rz),0] #——————-[cx11,cx12,cx13]
    xpp=np.inner(a, b)
@@ -144,4 +146,4 @@ pass
 # User input method call, CHANGE VALUES for all args:
 # xc, yc, zc for all RealNums [-10,10], angle for all RealNums [-259,259]
 # R_axis ['Rx','Ry','Rz'], solid_name ['cube', 'tetrahedron', 'octahedron']
-rotate_shape(0,0,0, 0, 'Ry', 'tetrahedron')
+rotate_shape(0,0,0, 90, 'Ry', 'cube')
