@@ -71,6 +71,30 @@ def plot_shape(tri_shape_points, tri_shape_f):
     # Loop to plot all tris
     for face in tri_shape_f:
         # plt.plot([0,1],[0,1], color='k')
+
+        # EXPLANATION AS TO HOW THE PLOT WORKS USING THE f VALUES IN THE OBJ
+        # tri_shape_points holds the point vectors
+        # tri_shape_f holds the sequence of enumerated points (in 1=1st ordinal)
+        # The sequence of point vectors in tri_shape_f is used to draw all edges
+        # to make a face.
+        # Since tri_shape_points is a list of point vectors (list of lists),
+        # it takes two indices to access each point value. The first, for the vector in
+        # order in the list, and the second for the either x, y or z values.
+        # To get the correct points to draw the face, we must use tri_shape_f because
+        # it has the correct order of points for each face.
+        # Thus, to get the correct indices for the first point vector to plot, we use
+        # face[0], which tells us which point vector to use in the order of tri_shape_f
+        # for plotting vertex 0 to 1
+        # For example, to plot vertex 0 to 1
+        # face[0] has the start ordinal for vertex 0. Then the second index is the [0]
+        # to get the x value (eg. [1] is the y value, [2] is the z value).
+
+        # plt.plot needs two values, one for x and one for y in this format [x,y]
+        # The first point x val is:
+        # tri_shape_points[  face[0] ] [0]
+        # The first point y val is:
+        # tri_shape_points[ face[1]] [0]
+
         # vertex 0 to 1
         plt.plot([ tri_shape_points[  face[0] ] [0], tri_shape_points[ face[1]] [0] ],
                  [ tri_shape_points[  face[0] ] [1], tri_shape_points[ face[1]] [1] ],
@@ -78,7 +102,7 @@ def plot_shape(tri_shape_points, tri_shape_f):
         # vertex 1 to 2
         plt.plot([ tri_shape_points[  face[1] ] [0], tri_shape_points[ face[2]] [0] ],
                  [ tri_shape_points[  face[1] ] [1], tri_shape_points[ face[2]] [1] ],
-                 color='k')
+                 color='red')
         # vertex 2 to 0
         plt.plot([ tri_shape_points[  face[2] ] [0], tri_shape_points[ face[0]] [0] ],
                  [ tri_shape_points[  face[2] ] [1], tri_shape_points[ face[0]] [1] ],
@@ -91,7 +115,7 @@ def plot_shape(tri_shape_points, tri_shape_f):
 
 
 def main():
-    importObj('octahedron') # Choose from cube, tetrahedron, octahedron
+    importObj('tetrahedron') # Choose from cube, tetrahedron, octahedron
     plot_shape(tri_shape_points, tri_shape_f)
     pass
 

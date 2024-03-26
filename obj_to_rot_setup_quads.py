@@ -78,24 +78,48 @@ def plot_shape(quad_shape_points, quad_shape_f):
     # Loop to plot all faces for each quad
     for face in quad_shape_f:
         # plt.plot([0,1],[0,1], color='k')
+
+        # EXPLANATION AS TO HOW THE PLOT WORKS USING THE f VALUES IN THE OBJ
+        # quad_shape_points holds the point vectors
+        # quad_shape_f holds the sequence of enumerated points (in 1=1st ordinal)
+        # The sequence of point vectors in quad_shape_f is used to draw all edges
+        # to make a face.
+        # Since quad_shape_points is a list of point vectors (list of lists),
+        # it takes two indices to access each point value. The first, for the vector in
+        # order in the list, and the second for the either x, y or z values.
+        # To get the correct points to draw the face, we must use quad_shape_f because
+        # it has the correct order of points for each face.
+        # Thus, to get the correct indices for the first point vector to plot, we use
+        # face[0], which tells us which point vector to use in the order of quad_shape_f
+        # for plotting vertex 0 to 1
+        # For example, to plot vertex 0 to 1
+        # face[0] has the start ordinal for vertex 0. Then the second index is the [0]
+        # to get the x value (eg. [1] is the y value, [2] is the z value).
+
+        # plt.plot needs two values, one for x and one for y in this format [x,y]
+        # The first point x val is:
+        # quad_shape_points[  face[0] ] [0]
+        # The first point y val is:
+        # quad_shape_points[ face[1]] [0]
+
         # vertex 0 to 1
         plt.plot([ quad_shape_points[  face[0] ] [0], quad_shape_points[ face[1]] [0] ],
                  [ quad_shape_points[  face[0] ] [1], quad_shape_points[ face[1]] [1] ],
-                 color='k')
+                 color='black')
         # vertex 1 to 2
         plt.plot([ quad_shape_points[  face[1] ] [0], quad_shape_points[ face[2]] [0] ],
                  [ quad_shape_points[  face[1] ] [1], quad_shape_points[ face[2]] [1] ],
-                 color='k')
+                 color='red')
 
         # vertex 2 to 3
         plt.plot([ quad_shape_points[  face[2] ] [0], quad_shape_points[ face[3]] [0] ],
                  [ quad_shape_points[  face[2] ] [1], quad_shape_points[ face[3]] [1] ],
-                 color='k')
+                 color='black')
        
         # vertex 3 to 0
         plt.plot([ quad_shape_points[  face[3] ] [0], quad_shape_points[ face[0]] [0] ],
                  [ quad_shape_points[  face[3] ] [1], quad_shape_points[ face[0]] [1] ],
-                 color='k')
+                 color='black')
 
         pass
 
