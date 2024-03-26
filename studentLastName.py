@@ -42,7 +42,7 @@ def choose_solid_name(solid_name):
    if solid_name == 'tetrahedron' or solid_name == 'octahedron':
       vertex_count, x, y, z, tri_shape_points, tri_shape_f = \
          obj_to_rot_setup_tris.importObj(solid_name)
-   elif solid_name == 'cube':
+   elif solid_name == 'cube' or solid_name == 'die':
       vertex_count, x, y, z, quad_shape_points, quad_shape_f = \
          obj_to_rot_setup_quads.importObj(solid_name)
    pass
@@ -115,14 +115,14 @@ def rotate_shape(xc, yc, zc, angle, R_axis, solid_name):
 
       # collects each vertex as a point vector into a list of point vectors
       # based on solid name
-      if solid_name == 'cube':
+      if solid_name == 'cube' or solid_name == 'die':
          quad_shape_points[i] = [xg[i], yg[i], zg[i]]
       elif solid_name == 'tetrahedron' or solid_name == 'octahedron':
          tri_shape_points[i] = [xg[i], yg[i], zg[i]]
 
    # plot the solid based on new point vectors and face defintions
    # quad choice
-   if solid_name == 'cube':
+   if solid_name == 'cube' or solid_name == 'die':
       obj_to_rot_setup_quads.plot_shape(quad_shape_points, quad_shape_f)
    # tri choice
    elif solid_name == 'tetrahedron' or solid_name == 'octahedron':
@@ -132,4 +132,4 @@ pass
 
 
 # User input method call
-rotate_shape(0,0,0, 0, 'Ry', 'cube')
+rotate_shape(0,0,0, 0, 'Ry', 'die')

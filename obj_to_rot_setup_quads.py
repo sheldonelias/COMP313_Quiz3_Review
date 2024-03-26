@@ -31,9 +31,10 @@ def importObj(shape_name):
             pnt_vect = line_v.split(' ')
 
             for index, str in enumerate(pnt_vect):
+                #print(str)
                 pnt_vect[index] = float(str)
 
-            # print('pnt_vect', pnt_vect)
+            #print('pnt_vect', pnt_vect)
             quad_shape_points.append(pnt_vect)
             quad_shape_x.append(pnt_vect[0])
             quad_shape_y.append(pnt_vect[1])
@@ -45,10 +46,12 @@ def importObj(shape_name):
             line_f = line.strip('f \n')
             face = line_f.split(' ')
 
+            print(face)
+
             for index, vector in enumerate(face):
-                point_val = vector[0]
-                face[index] = int(point_val) - 1
-            # print(face)
+                pnt_num = vector.split('/')[0]
+                face[index] = int(pnt_num) - 1
+            print(face)
             quad_shape_f.append(face)
 
     '''
