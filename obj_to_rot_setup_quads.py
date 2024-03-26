@@ -109,7 +109,7 @@ def plot_shape(quad_shape_points, quad_shape_f):
         # vertex 1 to 2
         plt.plot([ quad_shape_points[  face[1] ] [0], quad_shape_points[ face[2]] [0] ],
                  [ quad_shape_points[  face[1] ] [1], quad_shape_points[ face[2]] [1] ],
-                 color='red')
+                 color='black')
 
         # vertex 2 to 3
         plt.plot([ quad_shape_points[  face[2] ] [0], quad_shape_points[ face[3]] [0] ],
